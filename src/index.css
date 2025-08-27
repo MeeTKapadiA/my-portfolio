@@ -1,0 +1,83 @@
+/* index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(ellipse at top left, #1f1f1f 0%, #000000 100%);
+}
+html {
+  scroll-behavior: smooth;
+}
+body.dark {
+  background: #0f0f0f;
+  color: #fff;
+}
+
+body.light {
+  background: #ffffff;
+  color: #111;
+}
+
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid #ccc;
+}
+
+body.light .nav-links a {
+  color: #111;
+}
+
+body.light .nav-links a:hover::after {
+  background-color: #111;
+}
+
+body.light .resume-btn {
+  color: #111;
+  border-color: #111;
+  box-shadow: 0 0 10px #1115;
+}
+
+body.light .resume-btn:hover {
+  background-color: #111;
+  color: #fff;
+  box-shadow: 0 0 15px #111;
+}
+/* Global subtle tech background */
+body {
+  background-color: #f7f9fc;
+  background-image: url('/tech-bg-light1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #1c1c1e;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Optionally: Background only on hero */
+.hero-section {
+  background-color: #f7f9fc;
+  background-image: url('/tech-bg-light1.png');
+  background-size: cover;
+  background-position: center;
+}

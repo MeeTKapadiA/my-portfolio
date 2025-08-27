@@ -1,0 +1,57 @@
+.hero-section {
+  height: 100vh;
+  background-color: #f7f9fc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8%;
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1c1c1e;
+  line-height: 1.3;
+}
+
+.hero-content h1 span {
+  color: #005eff;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #444;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #005eff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #0046c0;
+}
+
+.hero-visual {
+  flex: 1;
+  height: 100%;
+  background-image: url('/assets/tech-bg-light.jpg'); /* Optional decorative SVG */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.05;
+}

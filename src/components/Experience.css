@@ -1,0 +1,61 @@
+.experience-section {
+  padding: 4rem 8%;
+  background-color: #f7f9fc;
+}
+
+.experience-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #005eff;
+  margin-bottom: 2.5rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid #005eff20;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -10px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background-color: #005eff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #005eff33;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1c1c1e;
+  margin: 0;
+}
+
+.timeline-content h4 {
+  font-size: 1rem;
+  color: #005eff;
+  font-weight: 500;
+  margin: 0.2rem 0 0.5rem;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.timeline-content p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
