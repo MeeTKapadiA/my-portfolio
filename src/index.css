@@ -94,9 +94,7 @@ section h2 {
   background: linear-gradient(135deg, #fff 30%, var(--accent-cyan) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
+  align-self: center;
 }
 
 section h2::after {
