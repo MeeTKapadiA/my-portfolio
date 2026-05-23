@@ -1,0 +1,149 @@
+.contact-section {
+  background-color: transparent;
+  padding: 6rem 2rem;
+}
+
+.contact-container {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  padding: 2.5rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.terminal-prompt {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  letter-spacing: 0.5px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input,
+.input-group textarea {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.input-group textarea {
+  resize: vertical;
+}
+
+.input-group label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  pointer-events: none;
+  transition: var(--transition-smooth);
+  background: transparent;
+}
+
+/* Floating Label Magic */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+  top: -0.65rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  padding: 0 0.4rem;
+  background: #090616; /* blocks border line behind label */
+  color: var(--accent-cyan);
+  text-shadow: 0 0 5px rgba(0, 255, 231, 0.3);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(0, 255, 231, 0.1);
+  background: rgba(0, 255, 231, 0.01);
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  color: var(--bg-color);
+  font-weight: 700;
+  font-family: var(--font-title);
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: var(--glow-cyan);
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-btn:hover:not(:disabled) {
+  box-shadow: 0 0 25px rgba(0, 255, 231, 0.6);
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Success display styles */
+.success-wrapper {
+  padding: 3rem;
+  text-align: center;
+  border-radius: 16px;
+  border-color: rgba(0, 255, 231, 0.2);
+  box-shadow: var(--glow-cyan);
+  animation: neonPulse 2s infinite alternate;
+}
+
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 15px rgba(0, 255, 231, 0.1); }
+  100% { box-shadow: 0 0 25px rgba(0, 255, 231, 0.25); }
+}
+
+.lottie-success-container {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.success-wrapper h3 {
+  font-size: 1.35rem;
+  color: var(--accent-cyan);
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.success-wrapper p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+

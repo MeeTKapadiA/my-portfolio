@@ -1,0 +1,184 @@
+.projects-section {
+  background-color: transparent;
+  padding: 6rem 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+/* --- The Cyber Card --- */
+.project-card {
+  position: relative;
+  padding: 2.25rem 2rem;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 16px;
+  background-color: rgba(10, 5, 24, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  
+  /* Thicker, clearly highlighted neon border in normal state */
+  border: 2px solid rgba(0, 255, 231, 0.18);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: 
+    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    
+  /* Subtle Background grid pattern */
+  background-image: 
+    linear-gradient(rgba(0, 255, 231, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 231, 0.02) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Subtle background noise overlay */
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  /* Thick neon highlighted border on hover */
+  border-color: rgba(0, 255, 231, 0.95);
+  
+  /* Bright double-colored glow shadow */
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(0, 255, 231, 0.45),
+    0 0 40px rgba(189, 0, 255, 0.25);
+}
+
+/* Flicker animation of noise on hover */
+.project-card:hover::before {
+  opacity: 0.07;
+  animation: noiseFlicker 0.12s steps(2) infinite;
+}
+
+@keyframes noiseFlicker {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-1px, -1px); }
+  25% { transform: translate(1px, 2px); }
+  50% { transform: translate(-2px, 1px); }
+  75% { transform: translate(2px, -1px); }
+  90% { transform: translate(-1px, -2px); }
+  100% { transform: translate(1px, 1px); }
+}
+
+/* --- Project Image Wrapper (Visual Mocks) --- */
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 125px;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image-wrapper svg {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.project-card:hover .project-image-wrapper svg {
+  transform: scale(1.03); /* Zooms 1.03x on hover */
+  filter: drop-shadow(0 0 6px rgba(0, 255, 231, 0.45));
+}
+
+/* --- Header & Details --- */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.folder-icon {
+  font-size: 1.8rem;
+  color: var(--accent-cyan);
+  filter: drop-shadow(0 0 4px rgba(0, 255, 231, 0.3));
+}
+
+.external-link {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  transition: var(--transition-smooth);
+}
+
+.external-link:hover {
+  color: var(--accent-cyan);
+  filter: drop-shadow(0 0 6px var(--accent-cyan));
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.5px;
+  transition: var(--transition-smooth);
+}
+
+.project-card:hover h3 {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 8px rgba(0, 255, 231, 0.3);
+}
+
+.project-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.tech-tag {
+  background: rgba(0, 255, 231, 0.05);
+  color: var(--accent-cyan);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  border: 1px solid rgba(0, 255, 231, 0.12);
+  transition: var(--transition-smooth);
+}
+
+.project-card:hover .tech-tag {
+  border-color: rgba(0, 255, 231, 0.4);
+  color: var(--text-primary);
+  box-shadow: 0 0 5px rgba(0, 255, 231, 0.1);
+}
+
+
+

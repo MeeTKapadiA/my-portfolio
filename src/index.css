@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --bg-color: #03000a;
+  --bg-gradient: radial-gradient(circle at 50% 50%, #0e0720 0%, #03000a 100%);
+  --panel-bg: rgba(10, 5, 24, 0.6);
+  --panel-border: rgba(0, 255, 231, 0.1);
+  --panel-border-hover: rgba(0, 255, 231, 0.3);
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --accent-cyan: #00ffe7;
+  --accent-purple: #bd00ff;
+  --accent-blue: #005eff;
+  --glow-cyan: 0 0 15px rgba(0, 255, 231, 0.45);
+  --glow-purple: 0 0 15px rgba(189, 0, 255, 0.45);
+  --font-title: 'Orbitron', 'Inter', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: var(--bg-gradient);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(189, 0, 255, 0.2);
+  border-radius: 4px;
+  border: 2px solid var(--bg-color);
+  transition: var(--transition-smooth);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 231, 0.5);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  letter-spacing: 0.05em;
+}
+
+/* Section Title styling */
+section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #fff 30%, var(--accent-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-purple), transparent);
+  box-shadow: var(--glow-cyan);
+}
+
+/* Glassmorphism panel helper */
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  transition: var(--transition-smooth);
+}
+
+.glass-panel:hover {
+  border-color: var(--panel-border-hover);
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 231, 0.08);
+}
+
+/* 3D tilt effect base */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.card-3d-inner {
+  transform: translateZ(30px);
+}
+

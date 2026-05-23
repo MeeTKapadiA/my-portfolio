@@ -1,0 +1,131 @@
+.about-section {
+  background-color: transparent;
+  padding: 6rem 2rem;
+  overflow: hidden;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-dossier {
+  padding: 2.5rem;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-dossier::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+}
+
+.dossier-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 255, 231, 0.15);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.dossier-title {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.dossier-status {
+  color: var(--accent-purple);
+  text-shadow: var(--glow-purple);
+}
+
+.dossier-body p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.dossier-body p:last-child {
+  margin-bottom: 0;
+}
+
+.dossier-body strong {
+  color: var(--text-primary);
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-section-title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-title);
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-cat-card {
+  padding: 1.5rem;
+}
+
+.skill-cat-card h4 {
+  font-size: 1rem;
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-family: var(--font-title);
+  letter-spacing: 1px;
+}
+
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-chip {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.skill-chip:hover {
+  background: rgba(0, 255, 231, 0.05);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(0, 255, 231, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+
